@@ -1,9 +1,6 @@
 name: Reusable workflow
 
 on:
-  push:
-    branches: [ "main" ]
-
   workflow_call:
     inputs:
       app_path:
@@ -24,4 +21,4 @@ jobs:
           node-version: 16.x
     
       - name: Run a simple javascript file
-        run: node ../apps/${{ inputs.app_path }}/index.js
+        run: node ./apps/${{ inputs.app_path }}/index.js

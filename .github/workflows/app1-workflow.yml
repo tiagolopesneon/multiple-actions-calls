@@ -1,0 +1,14 @@
+name: App1 workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/app1/**'
+
+jobs:
+  call-workflow-with-app1:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      app_path: app1
